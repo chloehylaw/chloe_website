@@ -1,7 +1,16 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default function NavBar() {
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+
+export default function NavBar({
+  toggleTheme,
+  isDark,
+}: {
+  toggleTheme: () => void;
+  isDark: boolean;
+}) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showHamburger, setShowHamburger] = useState(false);
 
@@ -93,6 +102,9 @@ export default function NavBar() {
               </div>
             </li>
           </ul>
+          <button className="text-slate-500" onClick={() => toggleTheme()}>
+            {isDark ? <DarkModeIcon /> : <LightModeIcon />}
+          </button>
         </div>
       </div>
     </nav>
