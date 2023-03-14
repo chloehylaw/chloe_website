@@ -1,4 +1,5 @@
 import NavBar from '@/components/NavBar';
+import Footer from '@/components/Footer';
 import Head from 'next/head';
 import Image from 'next/image';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -81,6 +82,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+                <Footer isDark={isDark} toggleTheme={() => setIsDark(!isDark)}/>
             </div>
         </>
     );
